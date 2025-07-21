@@ -1,8 +1,116 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px 'Segoe UI', 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background: #f7f7f7;
+  color: #222;
+}
+
+:root {
+  --tm-red: #990000;
+  --tm-blue: #003366;
+  --tm-gold: #e2b007;
+  --tm-yellow: #ffe066;
+  --tm-green: #4caf50;
+  --tm-gray: #e5e5e5;
+  --tm-white: #fff;
 }
 
 a {
-  color: #00B7FF;
+  color: var(--tm-blue);
+  text-decoration: underline;
+}
+
+h1, h2 {
+  color: var(--tm-red);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+section {
+  background: var(--tm-white);
+  border: 2px solid var(--tm-blue);
+  border-radius: 12px;
+  margin: 32px 0;
+  padding: 24px 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.timer {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 16px 0;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: var(--tm-gray);
+  color: var(--tm-blue);
+  display: inline-block;
+  transition: background 0.5s, color 0.5s;
+}
+
+.timer.yellow {
+  background: var(--tm-yellow);
+  color: #222;
+}
+.timer.green {
+  background: var(--tm-green);
+  color: var(--tm-white);
+}
+.timer.red {
+  background: var(--tm-red);
+  color: var(--tm-white);
+}
+
+button {
+  background: var(--tm-blue);
+  color: var(--tm-white);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  margin: 6px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: var(--tm-red);
+}
+
+input[type="text"] {
+  padding: 7px 12px;
+  border: 1px solid var(--tm-blue);
+  border-radius: 5px;
+  margin-right: 8px;
+  font-size: 1rem;
+}
+
+ul#participant-list, ul#topic-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 18px 0;
+}
+ul#participant-list li, ul#topic-list li {
+  background: var(--tm-gold);
+  color: var(--tm-blue);
+  margin-bottom: 6px;
+  padding: 7px 14px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+#topic-reveal {
+  margin: 18px 0 0 0;
+  font-size: 1.2rem;
+  color: var(--tm-blue);
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 12px 6px;
+  }
+  .timer {
+    font-size: 1.2rem;
+    padding: 7px 10px;
+  }
 }

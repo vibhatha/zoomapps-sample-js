@@ -3,11 +3,42 @@ extends layout
 block content
     h1=title
     if isZoom
-        p Welcome to your Zoom App
+        p Welcome to Professional Beyond Boundaries Toastmasters
     else
         p You're viewing your Zoom App through the browser.&nbsp;
             a(href=`/install`) Click Here
             | &nbsp;to install your app in Zoom.
+
+    // Round Robin Session
+    section#roundrobin
+        h2 Round Robin Session
+        div#rr-timer.timer Timer: <span id="rr-timer-display">00:00</span>
+        ul#participant-list
+            // Participants will be listed here
+        button#add-participant(type="button") Add Participant
+        input#participant-name(type="text" placeholder="Enter participant name")
+
+    // Prepared Speech Session
+    section#prepared-speech
+        h2 Prepared Speech Session
+        div#ps-timer.timer Timer: <span id="ps-timer-display">00:00</span>
+        button#ps-start(type="button") Start Timer
+        button#ps-stop(type="button") Stop Timer
+
+    // Table Topics Session
+    section#table-topics
+        h2 Table Topics Session
+        div#tt-timer.timer Timer: <span id="tt-timer-display">00:00</span>
+        button#tt-start(type="button") Start Timer
+        button#tt-stop(type="button") Stop Timer
+        div#topic-input
+            input#new-topic(type="text" placeholder="Enter new topic")
+            button#add-topic(type="button") Add Topic
+        ul#topic-list
+            // Topics will be listed here as numbers
+        div#topic-reveal
+            span#revealed-topic
+        button#pick-topic(type="button") Pick Random Topic
 
 append scripts
     if isZoom
